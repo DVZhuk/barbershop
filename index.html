@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Барбершоп Бородинский</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="swiper-bundle.min.css" />
+    <link rel='preload' href='fonts/PTSans-Narrow.woff2'>
+    <link rel='preload' href='fonts/PTSans-NarrowBold.woff2'>
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="script/swiper-bundle.min.css">
   </head>
   <body>
     <header class="header">
@@ -49,7 +51,7 @@
             <input class="registration__text" type="password" name="password" placeholder="Пароль">
           </div>
           <div class="login__extra">
-            <input type="checkbox" name="remember" id="remember">
+            <input class="checkbox-input" type="checkbox" name="remember" id="remember">
             <label class="login__check services__checkbox" for="remember">
               Запомните меня
               <div class="checkbox__mark"></div>
@@ -57,7 +59,7 @@
             <a class="extra__forgot-password" href="#">Я забыл пароль!</a>
           </div>
           <div class="login__buttons">
-            <input class="login__button-log" type="submit" name="log-in" value="Войти">
+            <input class="login__button-log form-button" type="submit" name="log-in" value="Войти">
             <button class="login__button-close" type="button" name="button">Закрыть</button>
           </div>
         </form>
@@ -270,8 +272,8 @@
         <li class="frendly-list__item button--border"><a class="item--telegram" href="https://web.telegram.org" target="_blank">Телеграм</a></li>
       </ul>
     </footer>
-    <script src="swiper-bundle.min.js"></script>
-    <script src="swiper-script.js"></script>
-    <script src="menu-script.js"></script>
+    <script src="script/swiper-bundle.min.js"></script>
+    <script src="script/swiper-script.js"></script>
+    <script src="script/menu-script.js"></script>
   </body>
 </html>

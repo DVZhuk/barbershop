@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Запись на стрижку</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+    <link rel='preload' href='fonts/PTSans-Narrow.woff2'>
+    <link rel='preload' href='fonts/PTSans-NarrowBold.woff2'>
+    <link rel="icon" href="img/icon.png">
   </head>
   <body>
     <header class="header header--photo">
@@ -52,7 +54,7 @@
             <input class="registration__text" type="password" name="password" placeholder="Пароль">
           </div>
           <div class="login__extra">
-            <input type="checkbox" name="remember" id="remember">
+            <input class="checkbox-input" type="checkbox" name="remember" id="remember">
             <label class="login__check services__checkbox" for="remember">
               Запомните меня
               <div class="checkbox__mark"></div>
@@ -60,7 +62,7 @@
             <a class="extra__forgot-password" href="#">Я забыл пароль!</a>
           </div>
           <div class="login__buttons">
-            <input class="login__button-log" type="submit" name="log-in" value="Войти">
+            <input class="login__button-log form-button" type="submit" name="log-in" value="Войти">
             <button class="login__button-close" type="button" name="button">Закрыть</button>
           </div>
         </form>
@@ -74,44 +76,44 @@
         </header>
         <form class="registration__order" action="/mail" method="post">
           <div class="registration__name">
-            <input class="registration__text" type="text" name="lastname" placeholder="Фамилия">
-            <input class="registration__text" type="text" name="name" placeholder="Имя">
-            <input class="registration__text" type="text" name="father-name" placeholder="Отчество">
+            <input class="registration__text" type="text" name="lastname" placeholder="Фамилия" required>
+            <input class="registration__text" type="text" name="name" placeholder="Имя" required>
+            <input class="registration__text" type="text" name="father-name" placeholder="Отчество" required>
           </div>
           <div class="registration__contact">
-            <input class="registration__text" type="tel" name="number" placeholder="Контактный телефон">
-            <input class="registration__text text--margin" type="email" name="email" placeholder="Контактный e-mail">
+            <input class="registration__text" type="tel" name="number" placeholder="Контактный телефон" required>
+            <input class="registration__text text--margin" type="email" name="email" placeholder="Контактный e-mail" required>
           </div>
           <textarea class="registration__text text--extra-inform"
           name="extra-inform" placeholder="Доп. информация для мастера"></textarea>
           <div class="registration__model">
             <h3 class="model__heading">Выберите модель бороды</h3>
-            <input type="radio" name="model" value="admiral" id="admiral" checked>
-            <label class="model__radio radio--admiral" for="admiral" tabindex="1">
+            <input class="model__radio-input" type="radio" name="model" value="admiral" id="admiral" checked>
+            <label class="model__radio radio--admiral" for="admiral" >
               адмирал
               <div class="model__img img--admiral">
               </div>
             </label>
-            <input type="radio" name="model" value="logger" id="logger">
-            <label class="model__radio radio--logger" for="logger" tabindex="2">
+            <input class="model__radio-input" type="radio" name="model" value="logger" id="logger">
+            <label class="model__radio radio--logger" for="logger" >
               лесоруб
               <div class="model__img img--logger">
               </div>
             </label>
-            <input type="radio" name="model" value="polar" id="polar">
-            <label class="model__radio radio--polar" for="polar" tabindex="3">
+            <input class="model__radio-input" type="radio" name="model" value="polar" id="polar">
+            <label class="model__radio radio--polar" for="polar">
               полярник
               <div class="model__img img--polar">
               </div>
             </label>
-            <input type="radio" name="model" value="boyar" id="boyar">
-            <label class="model__radio radio--boyar" for="boyar" tabindex="4">
+            <input class="model__radio-input" type="radio" name="model" value="boyar" id="boyar">
+            <label class="model__radio radio--boyar" for="boyar">
               боярин
               <div class="model__img img--boyar">
               </div>
             </label>
-            <input type="radio" name="model" value="sage" id="sage">
-            <label class="model__radio radio--sage" for="sage" tabindex="5">
+            <input class="model__radio-input" type="radio" name="model" value="sage" id="sage">
+            <label class="model__radio radio--sage" for="sage">
               мудрец
               <div class="model__img img--sage">
               </div>
@@ -121,39 +123,48 @@
           </div>
           <div class="registration__services">
             <h3 class="model__heading heading--services">Дополнительные услуги</h3>
-            <input type="checkbox" name="tint" id="tint">
-            <label class="services__checkbox checkbox--tint" for="tint" tabindex="6">
+            <input class="checkbox-input" type="checkbox" name="tint" id="tint">
+            <label class="services__checkbox checkbox--tint" for="tint">
               Подкрасить бороду
               <div class="checkbox__mark"></div>
             </label>
-            <input type="checkbox" name="twist" id="twist">
-            <label class="services__checkbox checkbox--twist" for="twist" tabindex="7">
+            <input class="checkbox-input" type="checkbox" name="twist" id="twist">
+            <label class="services__checkbox checkbox--twist" for="twist">
               Накрутить усы
               <div class="checkbox__mark"></div>
             </label>
-            <input type="checkbox" name="comb" id="comb">
-            <label class="services__checkbox checkbox--comb" for="comb" tabindex="8">
+            <input class="checkbox-input" type="checkbox" name="comb" id="comb">
+            <label class="services__checkbox checkbox--comb" for="comb">
               Причесать бороду
               <div class="checkbox__mark"></div>
             </label>
-            <input type="checkbox" name="trim" id="trim">
-            <label class="services__checkbox  checkbox--trim" for="trim" tabindex="9">
+            <input class="checkbox-input" type="checkbox" name="trim" id="trim">
+            <label class="services__checkbox  checkbox--trim" for="trim">
               Подровнять виски
               <div class="checkbox__mark"></div>
             </label>
-            <input type="checkbox" name="remove" id="remove">
-            <label class="services__checkbox checkbox--remove" for="remove" tabindex="10">
+            <input class="checkbox-input" type="checkbox" name="remove" id="remove">
+            <label class="services__checkbox checkbox--remove" for="remove">
               Убрать седину
               <div class="checkbox__mark"></div>
             </label>
-            <input type="checkbox" name="polish" id="polish">
-            <label class="services__checkbox checkbox--polish" for="polish" tabindex="11">
+            <input class="checkbox-input" type="checkbox" name="polish" id="polish">
+            <label class="services__checkbox checkbox--polish" for="polish">
               Отполировать лысину
               <div class="checkbox__mark"></div>
             </label>
           </div>
-          <input class="registration__button" type="submit" name="send" value="Отправить заявку">
+          <input class="registration__button form-button" type="submit" name="send" value="Отправить заявку">
         </form>
+      </section>
+      <section class="pop-up">
+        <div class="pop-up__content">
+          <h3 class="pop-up__heading">Это успех!</h3>
+          <p class="pop-up__text">Ваша заявка отправлена.<br>Ожидайте,
+             мы свяжемся с вами как только будет минутка.
+           </p>
+          <button class="pop-up__button form-button" type="button" name="button">Закрыть окно</button>
+        </div>
       </section>
     </main>
     <footer class="footer" id="contact">
@@ -173,6 +184,7 @@
         <li class="frendly-list__item button--border"><a class="item--telegram" href="https://web.telegram.org" target="_blank">Телеграм</a></li>
       </ul>
     </footer>
-    <script src="menu-script.js"></script>
+    <script src="script/menu-script.js"></script>
+    <script src="script/focus-script.js"></script>
   </body>
 </html>
